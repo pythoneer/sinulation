@@ -1,4 +1,4 @@
-const PI: f32 = 3.141592653589793;
+pub const PI: f32 = 3.141592653589793;
 
 pub trait Trig {
     fn sin(self) -> Self;
@@ -12,7 +12,7 @@ impl Trig for f32 {
             x - x * x * x / 6.0 + x * x * x * x * x / 120.0 - x * x * x * x * x * x * x / 5040.0 // + x * x * x * x * x * x * x * x * x / 362880.0
         }
 
-        self = self % (2.0 * PI);
+        self = self - (2.0 * PI) * ((self/(2.0 * PI as f32)) as i32) as f32;
 
         if self < 0.0 {
             -(-self).sin()
