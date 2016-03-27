@@ -23,7 +23,7 @@ impl Trig for f32 {
         } else if self < 3.0 / 2.0 * PI {
             -sin_imp(self - PI)
         } else {
-            sin_imp(self - 3.0 / 2.0 * PI) + 1.0
+            sin_imp(self - 3.0 / 2.0 * PI) - 1.0
         }
     }
 
