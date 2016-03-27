@@ -17,16 +17,12 @@ impl Trig for f32 {
         if self.is_sign_negative() {
             -(-self).sin()
         } else if self < PI / 2.0 {
-            println!("s < pi / 2");
             sin_imp(self)
         } else if self < PI {
-            println!("s < pi");
             1.0 - sin_imp(self -  PI / 2.0)
         } else if self < 3.0 / 2.0 * PI {
-            println!("s < 3/2 pi");
             -sin_imp(self - PI)
         } else {
-            println!("s > 3/2 pi");
             sin_imp(self - 3.0 / 2.0 * PI) + 1.0
         }
     }
