@@ -14,7 +14,7 @@ impl Trig for f32 {
 
         self = self % (2.0 * PI);
 
-        if self.is_sign_negative() {
+        if self < 0.0 {
             -(-self).sin()
         } else if self < PI / 2.0 {
             sin_imp(self)
